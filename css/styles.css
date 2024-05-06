@@ -1,0 +1,642 @@
+/* DECLARACIONES GLOBALES */
+
+/* Los colores están definidos como variables */
+
+:root {
+  --azul: #0000ff;
+  --fondo: #fffafa;
+  --texto: #1f1e1c;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 400ms ease-in-out;
+}
+
+/* BREAKPOINTS */
+
+/* @media (min-width: 768px) { Tablet */
+/* @media (min-width: 1440px) { Large Desktop */
+
+/* Estilo del body */
+
+body {
+  background: radial-gradient(circle at 40% 0%, var(--azul) 0%, transparent 150vw),
+    radial-gradient(circle at 0% 20%, var(--azul) 0%, transparent 150vw),
+    radial-gradient(circle at 80% 40%, var(--azul) 0%, transparent 100vw),
+    radial-gradient(circle at 40% 60%, var(--azul) 0%, transparent 100vw),
+    radial-gradient(circle at 60% 80%, var(--azul) 0%, transparent 100vw),
+    radial-gradient(circle at 20% 100%, var(--azul) 0%, transparent 100vw);
+  background-color: var(--fondo);
+  color: var(--texto);
+  font-family: "Inconsolata", monospace;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  /*font-size: 18px;*/
+  font-size: 16px;
+  /*padding: 50px;*/
+  padding: 15px;
+  cursor: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50" fill="blue" /></svg>'), auto;
+}
+
+@media (min-width: 768px) {
+  body {
+    background: radial-gradient(circle at 40% 0%, var(--azul) 0%, transparent 30%),
+      radial-gradient(circle at 80% 40%, var(--azul) 0%, transparent 30%),
+      radial-gradient(circle at 20% 60%, var(--azul) 0%, transparent 30%),
+      radial-gradient(circle at 60% 100%, var(--azul) 0%, transparent 30%);
+    font-size: 18px;
+    padding: 30px;
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    padding: 50px;
+  }
+}
+
+/* Color de selección */
+
+::selection {
+  color: var(--fondo);
+  background-color: var(--azul);
+}
+
+/* ESTILOS DE LOS ELEMENTOS */
+
+/* Estilos de los encabezados */
+
+h1 {
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  /*font-size: 48px;*/
+  font-size: 32px;
+  /*margin: 25px 0px 5px;*/
+  margin: 15px 0px 5px;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 48px;
+    margin: 20px 0px 5px;
+  }
+}
+
+@media (min-width: 1440px) {
+  h1 {
+    margin: 25px 0px 5px;
+  }
+}
+
+h2 {
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: bold;
+  line-height: 1.1;
+  /*font-size: 24px;*/
+  font-size: 20px;
+  margin: 0px 0px 5px 0px;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 24px;
+  }
+}
+
+h3 {
+  font-weight: bold;
+  text-align: center;
+  color: var(--azul);
+  /*font-size: 24px;*/
+  font-size: 20px;
+  /*padding-bottom: 25px;*/
+  padding-bottom: 15px;
+  /*margin: 0px 0px 25px;*/
+  margin: 0px 0px 15px;
+}
+
+@media (min-width: 768px) {
+  h3 {
+    font-size: 24px;
+    padding-bottom: 20px;
+    margin: 0px 0px 20px;
+  }
+}
+
+@media (min-width: 1440px) {
+  h3 {
+    padding-bottom: 25px;
+    margin: 0px 0px 25px;
+  }
+}
+
+#portfolio h3 {
+  margin: 0;
+}
+
+h4 {
+  font-weight: normal;
+  font-size: 16px;
+  margin: 0px 0px 15px 0px;
+}
+
+/* Subrayado de algunos encabezados h3 */
+
+#introduccion h3,
+#experiencia h3,
+#educacion h3,
+#competencias h3,
+#contacto h3 {
+  border-bottom: 2px solid var(--azul);
+}
+
+/* Estilos de los cuerpos de texto */
+
+p {
+  line-height: 1.1;
+}
+
+.bold {
+  font-weight: bold;
+  color: var(--azul);
+}
+
+a {
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: normal;
+  color: var(--fondo);
+  text-decoration: none;
+  /* Quiero cambiar el color de relleno del cursor, pero no me funciona con los colores HEX */
+  cursor: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50" fill="black" /></svg>'), auto;
+}
+
+.enlace {
+  color: var(--azul);
+  font-weight: bold;
+}
+
+.enlace:hover {
+  text-decoration: underline;
+}
+
+.nombre-menu {
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: bold;
+  /*font-size: 24px;*/
+  font-size: 20px;
+  color: var(--texto);
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+@media (min-width: 768px) {
+  .nombre-menu {
+    font-size: 24px;
+  }
+}
+
+/* Estilo de los bloques de contenido */
+
+/* El menú está dentro de un header, y está situado en la columna izquierda */
+
+header {
+  display: grid;
+  /*grid-template-columns: repeat(3, 1fr);*/
+  grid-template-columns: 1fr;
+  /*margin-bottom: 50px;*/
+  margin-bottom: 15px;
+  gap: 15px;
+}
+
+@media (min-width: 768px) {
+  header {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 30px;
+    gap: 30px;
+  }
+}
+
+@media (min-width: 1440px) {
+  header {
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 50px;
+    gap: 50px;
+  }
+}
+
+.bocadillo {
+  background-color: var(--fondo);
+  /*width: 350px;*/
+  width: 75vw;
+  padding: 10px 12px;
+  border: 2px solid var(--azul);
+  border-radius: 10px;
+  /*margin-bottom: 10px;*/
+  margin-bottom: 5px;
+}
+
+@media (min-width: 768px) {
+  .bocadillo {
+    width: 35vw;
+    max-width: 350px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Elimino el margin-bottom de algunos bocadillos */
+
+header .bocadillo:nth-child(2) {
+  margin-bottom: 0px;
+}
+
+#contacto .bocadillo:first-child {
+  margin-bottom: 0px;
+}
+
+.info-perfil {
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+/* Elimino el bocadillo sobre el scroll horizontal */
+
+@media (min-width: 768px) {
+  .texto-scroll {
+    display: none;
+  }
+}
+
+/* Divido el contenido en 3 columnas iguales */
+
+.cuadricula {
+  display: grid;
+  /*grid-template-columns: repeat(3, 1fr);*/
+  grid-template-columns: 1fr;
+  align-items: start;
+  /* Alineo los elementos en la parte superior */
+  /*gap: 50px;*/
+  gap: 15px;
+}
+
+@media (min-width: 768px) {
+  .cuadricula {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .cuadricula {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+  }
+}
+
+/* El apartado de Introducción ocupa dos columnas en la versión tablet */
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  .columna-doble-intro {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+  }
+}
+
+/* El apartado de Portfolio ocupa dos columnas y su contenido está dividido en dos columnas iguales */
+
+@media (min-width: 768px) {
+  .columna-doble {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+  }
+}
+
+@media (min-width: 1440px) {
+  .columna-doble {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+  }
+}
+
+.dos-columnas {
+  /*En la versión móvil los proyectos se ven con un scroll lateral*/
+  display: grid;
+  grid-template-columns: repeat(6, 75vw);
+  overflow-x: scroll;
+  gap: 15px;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+  .dos-columnas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow: hidden;
+    gap: 30px;
+    padding: 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .dos-columnas {
+    gap: 50px;
+  }
+}
+
+/* Scrollbar CSS */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #0000ff #fffafa;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #fffafa;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #0000ff;
+  border-radius: 5px;
+}
+
+#portfolio .apartado {
+  scroll-snap-align: start;
+}
+
+/* Los botones están ordenados con flexbox, antes estaban uno encima del otro */
+
+.bloque {
+  background-color: var(--fondo);
+  /*width: 100%;*/
+  width: calc(100vw - 15px * 2);
+  /* Los bloques tienen un ancho del 100%
+  del view-width respetando el padding de 15px del body */
+  /*padding: 25px;*/
+  padding: 15px;
+  border: 2px solid var(--azul);
+  border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  .bloque {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .bloque {
+    width: 100%;
+    padding: 25px;
+  }
+}
+
+.bloque#experiencia {
+  /*margin-bottom: 50px;*/
+  margin-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+  .bloque#experiencia {
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .bloque#experiencia {
+    margin-bottom: 50px;
+  }
+}
+
+#experiencia .apartado,
+#educacion .apartado {
+  margin-top: 15px;
+}
+
+@media (min-width: 768px) {
+
+  #experiencia .apartado,
+  #educacion .apartado {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 1440px) {
+
+  #experiencia .apartado,
+  #educacion .apartado {
+    margin-top: 25px;
+  }
+}
+
+/* Estilos de menús de botones */
+
+.botones-menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-flow: row wrap;
+  /*Esta propiedad combina "flex-direction" y "flex-wrap" */
+  gap: 10px;
+  padding: 15px 0px 0px;
+  width: 75vw;
+  margin: 0px 0px 0px auto;
+}
+
+@media (min-width: 768px) {
+  .botones-menu {
+    width: auto;
+  }
+}
+
+#contacto .botones-menu {
+  /*padding: 15px 0px 25px;*/
+  padding: 15px 0px 15px;
+}
+
+@media (min-width: 768px) {
+  #contacto .botones-menu {
+    padding: 15px 0px 20px;
+  }
+}
+
+@media (min-width: 1440px) {
+  #contacto .botones-menu {
+    padding: 15px 0px 25px;
+  }
+}
+
+.boton-menu {
+  background-color: var(--azul);
+  border: 2px dashed var(--azul);
+  border-radius: 10px;
+  text-align: center;
+  width: fit-content;
+  /*padding: 15px 25px;*/
+  padding: 15px;
+}
+
+@media (min-width: 768px) {
+  .boton-menu {
+    padding: 15px 20px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .boton-menu {
+    padding: 15px 25px;
+  }
+}
+
+.boton-menu:hover {
+  border: 2px dashed var(--fondo);
+}
+
+.boton {
+  background-color: var(--azul);
+  border: 2px solid var(--azul);
+  border-radius: 10px;
+  text-align: center;
+  display: block;
+  width: fit-content;
+  /*padding: 15px 25px;*/
+  padding: 15px;
+  /*margin: 25px 0px 0px;*/
+  margin: 15px 0px 0px;
+}
+
+@media (min-width: 768px) {
+  .boton {
+    padding: 15px 20px;
+    margin: 20px 0px 0px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .boton {
+    padding: 15px 25px;
+    margin: 25px 0px 0px;
+  }
+}
+
+#contacto .boton {
+  /*margin: 25px 0px 0px auto;*/
+  margin: 15px 0px 0px auto;
+}
+
+@media (min-width: 768px) {
+  #contacto .boton {
+    margin: 20px 0px 0px auto;
+  }
+}
+
+@media (min-width: 1440px) {
+  #contacto .boton {
+    margin: 25px 0px 0px auto;
+  }
+}
+
+.boton:hover {
+  background-color: var(--fondo);
+  color: var(--azul);
+}
+
+/* Estilo de las imágenes */
+
+.foto-perfil {
+  display: block;
+  border: 2px solid var(--azul);
+  border-radius: 50%;
+  margin: auto;
+  width: 50%;
+  max-width: 200px;
+}
+
+.foto-perfil-menu {
+  border: 2px solid var(--azul);
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.imagen-proyecto {
+  border: 2px solid var(--azul);
+  /*margin-top: -25px;*/
+  /*margin-bottom: 25px;*/
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .imagen-proyecto {
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .imagen-proyecto {
+    margin-bottom: 25px;
+  }
+}
+
+/* Estilo de las barras de la sección "Competencias" */
+
+/* Se muestra el porcentaje del skill con hover sobre la barra azul */
+
+.barra {
+  height: 30px;
+  background-color: var(--azul);
+  /*margin-bottom: 25px;*/
+  margin-bottom: 15px;
+  border-radius: 15px;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: normal;
+  color: var(--azul);
+  text-align: center;
+  line-height: 30px;
+}
+
+@media (min-width: 768px) {
+  .barra {
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .barra {
+    margin-bottom: 25px;
+  }
+}
+
+.skill:hover .barra {
+  color: var(--fondo);
+}
+
+.experto {
+  width: 100%;
+}
+
+.avanzado {
+  width: 75%;
+}
+
+.intermedio {
+  width: 50%;
+}
+
+.principiante {
+  width: 25%;
+}
